@@ -1,23 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+// import Login from './login';
+import Newproject from './componets/newproject';
+
+
+
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='body-l'>
+      {/* <form>
+        <div className='form-group'>
+          <label for="nameproject">name project</label>
+          <input type='text' id='name_project' className='form-control' />  
+          
+        </div>  
+        
+      </form>                     */}
+
+        <Newproject />
+        <div className='katsa-img'>
+          <img src='http://localhost:3004/eapc-logo.png' alt='katsa-img' />
+        </div>
+
     </div>
   );
 }

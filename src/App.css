@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -26,7 +26,7 @@
 
 .App-link {
   color: #61dafb;
-}
+} */
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +35,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+
+.headder{
+  text-align: center;
+}
+body{
+  direction: rtl;
+  text-align: right;
+}
+
+
+.container{
+  /* border-radius: 5px;
+
+  padding: 20px; */
+}
+
+.body-l{
+  /* background-image: url('./componets/eapc-logo.png');
+  background-repeat: no-repeat;
+  background-position: right bottom; */
+  background-attachment: fixed;
+  background-color: #26ba2e;
+}
+
+.katsa-img{
+  position: right bottom;
+}
+
+
+.grid-item{
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  font-size: 20px;
 }
