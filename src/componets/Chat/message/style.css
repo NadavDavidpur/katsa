@@ -1,0 +1,27 @@
+.direct-chat-info {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12px;
+  }
+  .direct-chat-name {
+    font-weight: 600;
+  }
+  .direct-chat-timestamp {
+    color: #999;
+  }
+  .menu {
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: center; */
+    background-color: bisque;
+    width: 40px;
+    /* display: flex; */
+    flex-direction: column;
+    /* background: #ffffff; */
+  }
+  .menu-item {
+    cursor: pointer;
+
+    
+  }
+  
