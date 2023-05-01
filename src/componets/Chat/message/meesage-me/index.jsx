@@ -80,9 +80,9 @@ function MessageMe({body,workerName,date, avatar, show, setshow, id, comments, i
             <div className="d-flex flex-row justify-content-start mb-4">
            
                 <img
-                src={avatar}
-                alt="avatar 1"
-                style={{ width: "45px", height: "100%" }}
+                    src={avatar}
+                    alt="avatar 1"
+                    style={{ width: "45px", height: "100%" }}
                 />
                 <div
                     className="p-3 ms-3 position-relative"

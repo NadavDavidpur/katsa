@@ -25,6 +25,8 @@
     "react-cookie": "^4.1.1",
     "react-datetime": "^3.2.0",
     "react-design-editor": "^0.0.52",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-image-select": "^1.0.1",

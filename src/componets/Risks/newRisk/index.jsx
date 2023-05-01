@@ -1,18 +1,45 @@
 import { useState } from "react"
 import CloseButton from 'react-bootstrap/CloseButton'
-import APIService from "./help/APIService"
+import APIService from "../../help/APIService"
 
 
 
-function NewRisk({setshowpopup, risks, setRisks, projectId})
+function NewRisk({setshowpopup, risks, setRisks})
 {
     const [newRisky, setNewRisky] = useState('')
+    // const [risks1,setrisks1]=useState(JSON.parse(window.localStorage.getItem('risks')))
     const hundleAdd =()=>{
         if(newRisky!='')
         {
-            console.log(risks.find(risk => risk.name==newRisky))
-            // console.log(risks[risks.length - 1].id)
-            setRisks(prew => [...prew, {'id':risks[risks.length - 1].id+1, 'name':newRisky}])
+            // console.log(risks)
+            // // console.log(risks[risks.length - 1].id)
+            // if(risks !=null || risks!=[]){
+
+            //     setRisks(prew => [...prew, {'id':risks[risks.length - 1].id+1, 'name':newRisky, 'inactive':1}])
+            //     window.localStorage.setItem('risks',JSON.stringify(risks))
+            // }
+            // else{
+            //     console.log(2)
+            //     setRisks([{'id':1, 'name':newRisky, 'inactive':1}])
+            // }
+            // APIService.risks().then(res=>{
+            //     // setRisks(res.data)
+                
+            //     // window.localStorage.setItem('risks',JSON.stringify(res.data))
+            //     // setRisks(res.data)
+            // })
+
+
+            
+            setRisks(prew => [...prew,{'id':risks[risks.length - 1].id+1, 'name':newRisky, 'inactive':1}])
+            // window.localStorage.setItem('risks',JSON.stringify(risks))
+            //     APIService.risks().then(res=>{
+            //     setRisks(res.data)
+                
+            //     window.localStorage.setItem('risks',JSON.stringify(res.data))
+            //     // setRisks(res.data)
+            // })
+            // setRisks(risks)
             // setRisks(prew => [...prew, {"id":risks[risks.length - 1].id+1, "name":newRisky}])
             APIService.NewRisk({"RiskName":newRisky})
             setshowpopup(false)
@@ -20,6 +47,7 @@ function NewRisk({setshowpopup, risks, setRisks, projectId})
         else{
             alert("הוספת סיכון זה/ זה ריק")
         }
+        console.log(risks)
 }
     return(
         <div className="popup-container1">

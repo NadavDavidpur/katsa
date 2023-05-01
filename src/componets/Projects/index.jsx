@@ -67,14 +67,14 @@ function Projects({projects, setProjects, setProject, project,user,setUser}){
 
                     <div className="workers-title">
                         <h1>פרוייקטים</h1>
-                        <button className="btn-circle mt-2 btn-primary btn" onClick={()=>{navigate('/newProject')}}><FaPlus className='text-center' /></button>
+                        <button className="mt-2 btn-circle" onClick={()=>{navigate('/newProject')}}><FaPlus className='text-center' /></button>
                     </div>
                     <div className="container" onBlur={()=>{setshowInfo(false)}}>
 
                     
 
                         {
-                            projects.map((each,i)=>(
+                            (projects.filter(project=>project.inactive==1)).map((each,i)=>(
                                 // <tr>
                                     //<div className="container">
                                         <div className='row mt-2 d-flex text-end text right'>
@@ -154,6 +154,18 @@ const Info = ({project}) =>{
             
                 <div className='col-12 m'>
                     <p className="text-right text-end h5">מיקום: {project.location}</p>
+                </div>
+            </div>
+            <div className='row'>
+            
+                <div className='col-12 m'>
+                    <p className="text-right text-end h5">תיאור: {project.description}</p>
+                </div>
+            </div>
+            <div className='row'>
+            
+                <div className='col-12 m'>
+                    <p className="text-right text-end h5">כלים: {project.Tool}</p>
                 </div>
             </div>
             

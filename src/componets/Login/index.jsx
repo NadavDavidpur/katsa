@@ -16,7 +16,10 @@ function Login({user, setUser, userIn, setUserin, setProjects,projects,setRisks,
     {
       // console.log("Wwww")
       setUser({"username":username, "id":id})
-   
+      APIService.risks().then(res=>{
+        window.localStorage.setItem('risks',JSON.stringify(res.data))
+        setRisks(res.data)
+      })
       APIService.projects().then(res=>{
           // console.log(res.data)
           setProjects(res.data)

@@ -6,10 +6,10 @@ import { useNavigate } from "react-router";
 //import Loading from "./Loading";
 import Navbar from "../../Navbar/index";
 import worker_icon from '../../pictures/worker-icon.jpg'
-
+import description from '../../pictures/description.jpg'
 //import {FcHeadset} from "react-icons/fc" 
-import { FaRocketchat, FaExclamationTriangle, FaPlus, FaComment, FaRegTrashAlt, FaMapMarkerAlt } from "react-icons/fa"
-function Project({project, setProject, risks, setRisks, setProjects, user})
+import { FaRocketchat, FaExclamationTriangle, FaPlus, FaComment, FaRegTrashAlt, FaMapMarkerAlt, FaTools } from "react-icons/fa"
+function Project({project, setProject, risks, setRisks, setProjects, user, setUser})
 {
     const [showpopup, setshowpopup] = useState(false)
     const [risksList, setRisksList] = useState([])
@@ -45,8 +45,9 @@ function Project({project, setProject, risks, setRisks, setProjects, user})
 
 
     useEffect(()=>{
-       
-       
+        setUser(JSON.parse(window.localStorage.getItem('user')))
+       console.log(user.isActive==1)
+       setRisks(JSON.parse(window.localStorage.getItem('risks')))
         APIService.projects().then(res=>{
             setProject((res.data).filter(project=>project.id==window.location.pathname.split('/')[2])[0])
             setProjects(res.data)
@@ -103,22 +104,7 @@ function Project({project, setProject, risks, setRisks, setProjects, user})
 
     
 
-    // useEffect(() => {
-    //     // Access count value from session storage
-    //     var pageView = sessionStorage.getItem("pageView");
-    //     if (pageView == null) {
-    //       // Initialize page views count
-    //       pageView = project;
-    //     } else {
-    //       // Increment count
-    //       pageView = project;
-    //     }
-    //     // Update session storage
-    //     sessionStorage.setItem("pageView", pageView);
-    //     console.log(1)
-    //     console.log(pageView)
-        
-    //   }, []);
+
       
 
     const hundleAdd = () =>{
@@ -146,7 +132,7 @@ function Project({project, setProject, risks, setRisks, setProjects, user})
 
     return(
         <div>
-            {user.isActive==1 ? 
+            {user.isActive===1 ? 
             <div>
                 <Navbar user={user} />
                 {project ?
@@ -154,12 +140,13 @@ function Project({project, setProject, risks, setRisks, setProjects, user})
                        
                         <div className="row mt-3">
 
-                            <div className="col-6 h1 text-center">{project.name}</div>
+                            <div className="col-6 h1 text-center">{project.name}
+                            {/* <button className="btn btn-xs text-right"><FaRegTrashAlt /></button> */}
+                            
+                            </div>
                         </div>
                         <div className="row mt-3">
-                            <div className="col-3"><p  className="h5 text-end text-right">שם קבלן
-                            <img src={worker_icon} width="25"/>
-                            </p></div>
+                            <div className="col-3"><p  className="h5 text-end text-right">שם קבלן<img src={worker_icon} width="25"/></p></div>
                             <div className="col-2">{project.contractorName}</div>
                         </div>
                         <div className="row mt-3">
@@ -175,12 +162,21 @@ function Project({project, setProject, risks, setRisks, setProjects, user})
                             <div className="col-3"><p className="h5 text-end text-right">מיקום<FaMapMarkerAlt /></p></div>
                             <div className="col-2">{project.location}</div>
                         </div>
+                        <div className="row mt-3">
+                            <div className="col-3">
+                                <p className="h5 text-end text-right">תיאור  <img src={description} width="25"/></p></div>
+                            <div className="col-2">{project.description}</div>
+                        </div>
+                        <div className="row mt-3">
+                            <div className="col-3"><p className="h5 text-end text-right">כלים<FaTools /></p></div>
+                            <div className="col-2">{project.Tool}</div>
+                        </div>
 
                         <div className="row mt-5">
                             <div className="col-12">
                                 <h4 className="text-right text-end">סיכונים <FaExclamationTriangle />   <button className="btn btn-primary" onClick={hundleAdd}><FaPlus /></button></h4>
                                 
-                                {showpopup ? <Risk risks={risks}  setshowpopup={setshowpopup} setInputs={setRisksList} Inputs={risksList} setRisks={setRisks} projectId={window.location.pathname.split('/')[2]} RisksProjects={RisksProjects} /> :<></>}
+                                {showpopup ? <Risk risks={risks.filter(risk=>risk.inactive==1)}  setshowpopup={setshowpopup} setInputs={setRisksList} Inputs={risksList} setRisks={setRisks} projectId={window.location.pathname.split('/')[2]} RisksProjects={RisksProjects} /> :<></>}
                             </div>
                         </div>
                         {

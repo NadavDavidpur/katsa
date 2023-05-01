@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Loading from "../Loading";
 import Navbar from "../Navbar";
-import { FaMinus } from "react-icons/fa";
+import { FaMinus, FaPlus } from "react-icons/fa";
 import APIService from "../help/APIService";
 import { useNavigate } from "react-router";
 import './style.css'
@@ -44,7 +44,7 @@ function Workers({workers,setWorkers, user,setUser})
                 <Navbar user={user} />
                 <div className="workers-title">
                         <h1>עובדים</h1>
-                        <button className="w3-button w2-xlarge w3-circle w3-teal" onClick={()=>{navigate('/newWorker')}}>+</button>
+                        <button className="mt-2 btn-circle" onClick={()=>{navigate('/newWorker')}}><FaPlus className='text-center' /></button>
                     </div>
                 <div className="grid" dir="rtl">
                 {
@@ -62,8 +62,9 @@ function Workers({workers,setWorkers, user,setUser})
                             פעיל: {worker.isActive == 1 ? <>כן</> : <>לא</>}
                             <br></br>
                             {worker.isActive == 1 ?
-                            <button onClick={()=>hundleClick(worker.id)} className="btn">
-                                <FaMinus color="red" />
+                            <button onClick={()=>hundleClick(worker.id)} className="btn-primary btn">
+                                {/* <FaMinus color="red" /> */}
+                                הפוך ללא פעיל
                             </button>
                             :<></>}
                         </div>

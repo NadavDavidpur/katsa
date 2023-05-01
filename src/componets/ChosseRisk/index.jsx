@@ -2,7 +2,7 @@ import CloseButton from 'react-bootstrap/CloseButton'
 import { toast } from 'react-toastify';
 import { useEffect, useState } from "react";
 import OptionsList from "../help/option";
-import NewRisk from '../newRisk';
+import NewRisk from '../Risks/newRisk';
 import APIService from '../help/APIService';
 //import Project from './Project';
 
@@ -48,8 +48,14 @@ function Risk({risks, setshowpopup,setInputs, Inputs, setRisks,projectId,RisksPr
                 setInputs(prew => [...prew, {"id":Inputs[Inputs.length-1].id+1 , "projectId":projectId, "RiskName":risk,"inactive": 1}])
             }
             else{
-                
-                setInputs([{"id":RisksProjects[RisksProjects.length-1].id+1 , "projectId":projectId, "RiskName":risk,"inactive": 1}])
+                if(RisksProjects==[]){
+                    setInputs([{"id":1 , "projectId":projectId, "RiskName":risk,"inactive": 1}])
+
+                }
+                else{
+                     setInputs([{"id":RisksProjects[RisksProjects.length-1].id+1 , "projectId":projectId, "RiskName":risk,"inactive": 1}])
+                }
+               
             }
    
             setshowpopup(false)

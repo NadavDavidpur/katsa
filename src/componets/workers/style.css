@@ -2,7 +2,7 @@
     display: flex;
   }
 
-  .w3-button {
+  /* .w3-button {
     border:none;
     display:inline-block;
     padding:8px 16px;
@@ -19,16 +19,16 @@
 
   .w3-xlarge {
     font-size:24px!important;
-  }
+  } */
   
-  .w3-circle{
-    border-radius:50%;
-    }
+  /* .w3-circle{
+    border-radius:60%;
+    } */
   
-  .w3-teal,.w3-hover-teal:hover{
+  /* .w3-teal,.w3-hover-teal:hover{
     color:#fff!important;
     background-color:#009688!important;
-  }
+  } */
 
 
 
@@ -48,3 +48,16 @@
     padding: 10px;
     font-size: 20px;
   }
+
+
+  .btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 70%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    background-color: #0080FF;
+    border: none;
+} 

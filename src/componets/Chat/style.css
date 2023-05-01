@@ -1,16 +1,21 @@
 .box-body{
     border: 6px solid #cfdae1;
-  
-      position: absolute;
-      left: 55px;
-      top: 120px;
-      right: 55px;
-      bottom: 143px;
-      overflow-y: auto;
-      outline: none;
+    position: absolute;
+    left: 55px;
+    top: 120px;
+    right: 55px;
+    bottom: 143px;
+    overflow-y: auto;
+    outline: none;
     width:90%;
+  
     
   }
+
+
+  /* .btn-w{
+    width: 100%;
+  } */
 
 
   .box-footer {
@@ -25,5 +30,5 @@
     right: 58px;
     left:52px;
     bottom: 60px;
-    width:88%;
+    width:90%;
   }
