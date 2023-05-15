@@ -107,8 +107,8 @@ function MessageMe({body,workerName,date, avatar, show, setshow, id, comments, i
                     >
                         <div className="menu">
                     
-                            <FaPen className='' onClick={()=>{hundleEdit(id,body)}}/> 
-                            <FaTrash className='' onClick={()=>{hundleDelete(id,body)}} />
+                            <FaPen className='menu-item' onClick={()=>{hundleEdit(id,body)}}/> 
+                            <FaTrash className='menu-item' onClick={()=>{hundleDelete(id,body)}} />
                         </div>
                     </Popup>:<></>}
                   {show ?  <Edit body={messageBody} setMessageBody={setMessageBody} setshow={setshow} commentsProjectRisk={commentsProjectRisk} setcommentsProjectRisk={setcommentsProjectRisk} /> :<></>}

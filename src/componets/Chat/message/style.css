@@ -10,17 +10,21 @@
     color: #999;
   }
   .menu {
-    display: flex;
-    flex-flow: row wrap;
+    /* display: flex;
+    flex-flow: row wrap; */
     /* justify-content: center; */
-    background-color: bisque;
-    width: 40px;
+    background-color: white;
+    width: 50px;
+    /* border: solid black; */
     /* display: flex; */
-    flex-direction: column;
+    /* flex-direction: column; */
     /* background: #ffffff; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   .menu-item {
     cursor: pointer;
+    display: inline;
 
     
   }
