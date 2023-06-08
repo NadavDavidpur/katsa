@@ -19,7 +19,7 @@ export default function Navbar({user}) {
           <CustomLink to="/projects">פרוייקטים</CustomLink>
           
           <CustomLink to="/workers">עובדים</CustomLink>
-          <CustomLink to="/risks">סיכונים</CustomLink>
+          {/* <CustomLink to="/risks">סיכונים</CustomLink> */}
           <CustomLink to="/" onClick={()=>clearLocal()} className="text-start position-absolute start-0 mt-2">התנתק</CustomLink>
         </ul>
       </nav>

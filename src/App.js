@@ -27,12 +27,12 @@ function App(){
   const [workers, setWorkers] = useState(null)
   const [risks, setRisks] = useState(null)
   const [project, setProject] = useState(null)
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({'username':"", 'id':""})
   const [userIn, setUserin] = useState(null)
   // const [banner, setBanner] = useState(false)
 
   const [comments, setComments] = useState(null)
-
+  
 
   return(
     <div>
@@ -52,7 +52,7 @@ function App(){
             {/* <Route path="/chat" element={<Chat />} /> */}
             <Route path="/workers" element={<Workers workers={workers} setWorkers={setWorkers} user={user} setUser={setUser} />} />
             <Route path="/newWorker" element={<NewWorker data={data} setData={setData} />} />
-            <Route path='/risks' element={<Risks user={user} setUser={setUser} risks={risks} setRisks={setRisks} />} />
+            {/* <Route path='/risks' element={<Risks user={user} setUser={setUser} risks={risks} setRisks={setRisks} />} /> */}
              
         </Routes>
     </Router>

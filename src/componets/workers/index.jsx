@@ -55,7 +55,8 @@ function Workers({workers,setWorkers, user,setUser})
                             <br></br>
                             תעודת זהות: {worker.id }
                             <br></br>
-                            מנהל: {worker.isManager == 1 ? <>כן</> : <>לא</>}
+                            מנהל: 
+                            {worker.isManager == 1 ? <>כן</> : <>לא</>}
                             <br></br>
                             מחלקה: {worker.class}
                             <br></br>

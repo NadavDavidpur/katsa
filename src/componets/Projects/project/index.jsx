@@ -1,7 +1,6 @@
 import { useEffect,useState } from "react";
 import APIService from '../../help/APIService';
 import Risk from "../../ChosseRisk";
-import Cookies from 'js-cookie';
 import { useNavigate } from "react-router";
 //import Loading from "./Loading";
 import Navbar from "../../Navbar/index";
@@ -19,8 +18,7 @@ function Project({project, setProject, risks, setRisks, setProjects, user, setUs
    
     
 
-    // Cookies.set('data', JSON.stringify(project));
-    // const savedData = Cookies.get('data');
+   
     // useEffect(()=>{
     //     console.log(JSON.parse(savedData))  
     // })risk1.projectId console.log(risk1)
